@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<article>
+    <h1>Welcome to Class</h1>
+    {#each subjects as subject}
+        <a href={subject}>{subject}</a>
+    {/each}
+
+</article>
+
+<script lang="ts">
+    export let subjects: string[] = [
+    '/spanish/'
+    ];
+</script>
