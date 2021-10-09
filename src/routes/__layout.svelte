@@ -22,8 +22,18 @@
 
     onDestroy(page.subscribe(p => {
         console.warn(p)
-        speak(Object.keys(p).join(', '))
+        // speak(Object.keys(p).join(', '))
     }))
+
+    function speak(text, pitch, rate, voice, lang = 'en') {
+        let speech = new SpeechSynthesisUtterance();
+        speech.lang = lang;
+        speech.pitch = pitch || 1;
+        speech.text = text || 1;
+        speech.rate = rate || 1;
+        speech.voice = voice;
+        window.speechSynthesis.speak(speech);
+    }
 </script>
 
 <style lang="scss">

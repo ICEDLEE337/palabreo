@@ -1,5 +1,5 @@
 export function speak(text, pitch, rate, voice, lang = 'en') {
-    let speech = new (SpeechSynthesisUtterance as any)();
+    let speech = new window.SpeechSynthesisUtterance();
     speech.lang = lang;
     speech.pitch = pitch || 1;
     speech.text = text || 1;
