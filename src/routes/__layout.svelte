@@ -1,4 +1,4 @@
-<div style="border: solid 1px blue">
+<div>
     <nav class="row justify-content-space-around">
         {#each links as link}
             <div>
@@ -11,29 +11,19 @@
 
 <script lang="ts">
     import { page } from '$app/stores';
+    import { linx } from '$lib/linx';
     import { speak } from '$lib/speak';
     import {onDestroy} from 'svelte'
 
-    let links = [
-        {name: 'greek', slug: '/greek/'},
-        {name: 'hebrew', slug: '/hebrew/'},
-        {name: 'spanish', slug: '/spanish/'},
-    ];
+    let links = linx.map(name => ({name, slug: `/${name}/`}))
+    let pageParams = '';
 
     onDestroy(page.subscribe(p => {
         console.warn(p)
-        // speak(Object.keys(p).join(', '))
+        pageParams = p.params;
+        speak(Window, Object.keys(p).join(', '))
     }))
 
-    function speak(text, pitch, rate, voice, lang = 'en') {
-        let speech = new SpeechSynthesisUtterance();
-        speech.lang = lang;
-        speech.pitch = pitch || 1;
-        speech.text = text || 1;
-        speech.rate = rate || 1;
-        speech.voice = voice;
-        window.speechSynthesis.speak(speech);
-    }
 </script>
 
 <style lang="scss">
@@ -41,5 +31,9 @@
 
     a {
         @extend .btn-1;
+    }
+
+    nav {
+        border-bottom: solid 1px;
     }
 </style>
