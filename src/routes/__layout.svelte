@@ -11,26 +11,17 @@
 
 <script lang="ts">
     import { page } from '$app/stores';
-    import { linx } from '$lib/linx';
-    import { speak } from '$lib/speak';
-    import {onDestroy} from 'svelte'
+    import { linx } from '$lib/constants/linx';
 
     let links = linx.map(name => ({name, slug: `/${name}/`}))
-    let pageParams = '';
-
-    onDestroy(page.subscribe(p => {
-        console.warn(p)
-        pageParams = p.params;
-        speak(Window, Object.keys(p).join(', '))
-    }))
-
 </script>
 
 <style lang="scss">
-    @import '@onivoro/browser-layout/index';
+    // @import '@onivoro/browser-layout/index';
 
     a {
-        @extend .btn-1;
+        // @extend .btn-1;
+        font-weight: bold;
     }
 
     nav {
