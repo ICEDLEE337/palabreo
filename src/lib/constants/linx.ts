@@ -6,13 +6,8 @@ export const linxHebrew = 'hebrew';
 export const linxMath = 'math';
 export const linxScience = 'science';
 export const linxSpanish = 'spanish';
+export const linxBuilding = 'framing';
 
 export const linx = [
-    linxArt,
-    linxEnglish,
-    linxGreek,
-    linxHebrew,
-    linxMath,
-    linxScience,
-    linxSpanish
+    linxBuilding
 ];

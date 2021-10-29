@@ -1,5 +1,4 @@
 <script lang="ts">
-
     import { page } from '$app/stores';
     import { speak } from '$lib/features/speech/speak';
     import { voiceStore } from '$lib/features/speech/voice';

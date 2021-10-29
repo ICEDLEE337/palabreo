@@ -1,4 +1,4 @@
 export function getVoices(): SpeechSynthesisVoice[] {
-    const voices = window.speechSynthesis.getVoices();
+    const voices = globalThis.speechSynthesis.getVoices();
     return voices;
 };
