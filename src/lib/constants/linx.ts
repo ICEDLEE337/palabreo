@@ -9,5 +9,6 @@ export const linxSpanish = 'spanish';
 export const linxBuilding = 'framing';
 
 export const linx = [
-    linxBuilding
+    linxBuilding,
+    linxSpanish
 ];

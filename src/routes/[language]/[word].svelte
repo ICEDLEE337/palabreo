@@ -3,7 +3,7 @@
     import { speak } from '$lib/features/speech/speak';
     import { voiceStore } from '$lib/features/speech/voice';
 
-    const click = (word, voice) => speak(window, word, 2, 1, voice);
+    const click = (word, voice) => speak(word, 2, 1, voice);
 
 </script>
 
@@ -14,6 +14,7 @@ word { $page.params.word }
 <table>
 
     {#each $voiceStore as voice }
+        {#if voice.lang.toLowerCase().includes('es')}
         <tr>
             <td>
                 {#if voice} name { voice.name}{/if}
@@ -25,5 +26,6 @@ word { $page.params.word }
                 <button on:click={() => click($page.params.word, voice)}>{ $page.params.word }</button>
             </td>
         </tr>
+        {/if}
     {/each}
 </table>
