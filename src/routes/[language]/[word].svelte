@@ -3,7 +3,7 @@
     import { speak } from '$lib/features/speech/speak';
     import { voiceStore } from '$lib/features/speech/voice';
 
-    const click = (word, voice) => speak(word, 2, 1, voice);
+    const click = (word, voice) => speak(word, 2, 1, voice, 'es');
 
 </script>
 
