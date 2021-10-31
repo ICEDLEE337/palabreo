@@ -10,9 +10,8 @@
 </div>
 
 <script lang="ts">
-    import { linx } from '$lib/constants/linx';
-
-    let links = linx.map(name => ({name, slug: `/${name}/`}))
+    const prefix = '';
+    let links = ['es-MX', 'es-US', 'el-GR'].map(name => ({name, slug: `${prefix}/${name}/`}))
 </script>
 
 <style lang="scss">

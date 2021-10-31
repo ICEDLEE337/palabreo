@@ -27,7 +27,7 @@ button {
 
 <div class="pancake-stack">
     {#each $voiceStore as voice }
-        {#if voice.lang.toLowerCase().includes('es')}
+        {#if voice.lang.includes($page.params.language)}
         <div class="pancake">
             <Voice lang={voice.lang} name={voice.name}>
                 <div class="row">
