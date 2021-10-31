@@ -34,6 +34,16 @@ button {
         <input class="btn stroked raised" bind:value={text} />
     </div>
 
+    <div class="row">
+        {#each $wordStore as wordLang }
+            {#if wordLang.lang === $page.params.language.split('-')[0]}
+            {#each wordLang.words as word}
+                <button on:click={() => (text = word.word)}>{word.word}</button>
+            {/each}
+            {/if}
+        {/each}
+    </div>
+
     <div class="pancake-stack">
         {#each $voiceStore as voice }
             {#if voice.lang === $page.params.language}
