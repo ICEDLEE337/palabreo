@@ -19,23 +19,13 @@
 </script>
 
 <style lang="scss">
-    @import '@onivoro/browser-layout/card';
-    @import '@onivoro/browser-layout/padding';
-    @import '@onivoro/browser-layout/pancake';
-
-    .card {
-        border: solid 1px rgba(0,0,0,0.3);
-        display: block;
-    }
+    @import '@onivoro/browser-layout/index';
 </style>
 
-
-<div class="pancake-stack">
+<div class="pancake-stack txt">
     {#each words as word }
-        <div>
-            <a class="card pad-3 pancake" href={'/' + $page.params.language + '/' + word}>
-                {word}
-            </a>
-        </div>
+        <a class="pancake stroked" href={'/' + $page.params.language + '/' + word}>
+            {word}
+        </a>
     {/each}
 </div>

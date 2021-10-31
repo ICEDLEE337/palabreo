@@ -19,19 +19,14 @@
     @import '@onivoro/browser-layout/index';
 
     a {
-        font-weight: bold;
-        text-align: center;
-        text-decoration: none;
         &:hover {
-            background-color: white;
+            background-color: $blackice;
+            color: white;
         }
-        transition: 333ms background-color;
     }
 
     nav {
-        background-color: limegreen;
-        border-bottom: solid 1px;
-        // @extend .pad-1;
+        border-bottom: double 2px lightsteelblue;
         padding: 0;
     }
 </style>

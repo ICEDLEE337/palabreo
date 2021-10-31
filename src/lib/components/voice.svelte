@@ -1,8 +1,8 @@
-<article class="card hero light blackice">
-    <h3>{name}</h3>
-    <h3>Language: {lang}</h3>
-    <hr />
-    <slot></slot>
+<article class="card">
+    <h3>{name} {lang}</h3>
+    <div class="row justify-content-space-around">
+        <slot></slot>
+    </div>
 </article>
 
 <script lang="ts">
