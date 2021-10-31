@@ -1,21 +1,6 @@
 <script lang="ts">
     import {page} from '$app/stores';
-    let words = [
-    'chocolate',
-    'leche',
-    'silla',
-    'helado',
-    'tortilla',
-    'hermoso',
-    'bebe',
-    'elefante',
-    'desierto',
-    'tambor',
-    'bigote',
-    'galleta',
-    'manzana',
-    'gracias',
-    ];
+
 </script>
 
 <style lang="scss">

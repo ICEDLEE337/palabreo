@@ -10,8 +10,8 @@
 </div>
 
 <script lang="ts">
-    const prefix = '';
-    let links = ['es-MX', 'es-US', 'el-GR'].map(name => ({name, slug: `${prefix}/${name}/`}))
+    const prefix = '/lang';
+    let links = ['es-MX', 'es-US', 'el-GR', 'he-IL'].map(name => ({name, slug: `${prefix}/${name}/`}))
 </script>
 
 <style lang="scss">

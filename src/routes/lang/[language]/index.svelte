@@ -1,6 +1,21 @@
 <script lang="ts">
     import { page } from '$app/stores';
+    import { speak } from '$lib/features/speech/speak';
     import { voiceStore } from '$lib/features/speech/voice.store';
+    import { wordStore } from '$lib/features/speech/word.store';
+    import Voice from '$lib/components/voice.svelte';
+import { onMount } from 'svelte';
+import { getVoices } from '$lib/features/speech/get-voices';
+import { getVoiceByLang } from '$lib/features/speech/get-voice-by-lang';
+
+    let voice;
+    const click = (word, voice) => speak(word, 2, 1, voice, 'es');
+
+    function cue (text, voice) {
+        speak(text, 1, 1, voice, voice.lang)
+    }
+
+    let text;
 </script>
 
 <style lang="scss">
@@ -14,14 +29,26 @@ button {
     <div>
         <h1>{$page.params.language}</h1>
     </div>
-</div>
 
-<div class="pancake-stack">
-    {#each $voiceStore as voice }
-        {#if voice.lang.includes($page.params.language)}
-        <a class="pancake stroked" href={voice.lang}>
-           <h1>{voice.name}</h1>
-        </a>
-        {/if}
-    {/each}
+    <div class="row">
+        <input class="btn stroked raised" bind:value={text} />
+    </div>
+
+    <div class="pancake-stack">
+        {#each $voiceStore as voice }
+            {#if voice.lang === $page.params.language}
+            <div class="pancake">
+                <Voice lang={voice.lang} name={voice.name}>
+                    <div class="row">
+                        <input class="btn stroked raised" bind:value={text} />
+                        {#if text}
+                        <button class="raised" on:click={()=>cue(text, voice)}>{text}</button>
+                        {/if}
+                    </div>
+                </Voice>
+            </div>
+            {/if}
+        {/each}
+    </div>
+
 </div>
