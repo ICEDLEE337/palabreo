@@ -9,7 +9,7 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
-    "@onivoro/browser-layout": "^0.45.0",
+    "@onivoro/browser-layout": "^0.67.0",
     "@sveltejs/adapter-static": "^1.0.0-next.21",
     "@sveltejs/kit": "next",
     "node-sass": "^6.0.1",

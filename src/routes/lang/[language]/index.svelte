@@ -20,9 +20,6 @@ import { getVoiceByLang } from '$lib/features/speech/get-voice-by-lang';
 
 <style lang="scss">
 @import '@onivoro/browser-layout/index';
-button {
-    background-color: lime;
-}
 </style>
 
 <div class="hero light blackice">

@@ -1,4 +1,11 @@
-<article>
+<style lang="scss">
+    @import '@onivoro/browser-layout/card';
+    .card {
+        background-color: mintcream;
+    }
+</style>
+
+<article class="card">
     <h1>standard framing</h1>
 
     <ul>

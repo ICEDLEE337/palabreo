@@ -1,27 +1,24 @@
-<div>
-    <nav class="row justify-content-space-around">
-        {#each links as link}
-            <div>
-                <a class="btn-3" href={link.slug}>{link.name}</a>
-            </div>
-        {/each}
-    </nav>
+<nav class="row justify-content-space-around">
+    {#each links as link}
+        <a href={link.slug}>{link.name}</a>
+    {/each}
+</nav>
+<main>
     <slot></slot>
-</div>
+</main>
 
 <script lang="ts">
     const prefix = '/lang';
-    let links = ['es-MX', 'es-US', 'el-GR', 'he-IL'].map(name => ({name, slug: `${prefix}/${name}/`}))
+    let links = ['es-MX', 'es-US', 'el-GR', 'he-IL']
+        .map(name => ({name, slug: `${prefix}/${name}/`}))
 </script>
 
 <style lang="scss">
-    @import '@onivoro/browser-layout/index';
+    @import '@onivoro/browser-layout/flex';
+    @import '@onivoro/browser-layout/button';
 
-    a {
-        &:hover {
-            background-color: $blackice;
-            color: white;
-        }
+    a, button {
+        @extend .stroked;
     }
 
     nav {
