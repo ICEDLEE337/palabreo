@@ -1,5 +1,5 @@
 <nav class="row justify-content-space-around">
-    {#each links as link}
+    {#each linx as link}
         <a href={link.slug}>{link.name}</a>
     {/each}
 </nav>
@@ -8,9 +8,13 @@
 </main>
 
 <script lang="ts">
+    import {supportedLanguages} from '$lib/constants/supported-languages';
     const prefix = '/lang';
     let links = ['es-MX', 'es-US', 'el-GR', 'he-IL']
-        .map(name => ({name, slug: `${prefix}/${name}/`}))
+        .map(name => ({name, slug: `${prefix}/${name}/`}));
+        
+    let linx = supportedLanguages
+        .map(name => ({name, slug: `/${name}/`}));
 </script>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { supportedLanguages } from '$lib/constants/supported-languages';
+    import { voiceStore } from '$lib/features/speech/voice.store';
     let langs;
 </script>
 
@@ -11,14 +11,14 @@
 
 <div class="hero light blackice">
     <div>
-        <h1>Supported Languages</h1>
+        <h1>Voices</h1>
     </div>
 </div>
 
 <div class="pancake-stack">
-    {#each supportedLanguages as lang }
-        <a class="pancake stroked" href={lang}>
-           <h2>{lang}</h2>
+    {#each $voiceStore as voice }
+        <a class="pancake stroked" href={'lang/' + voice.lang + '/voice/' + voice.name}>
+           <h1>{voice.name} {voice.lang}</h1>
         </a>
     {/each}
 </div>
