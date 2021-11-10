@@ -1,6 +1,7 @@
 import { getVoices } from "./get-voices";
+import { parse } from "./parse";
 
-export function getVoiceByLang(lang: string): SpeechSynthesisVoice[] {
+export function getVoicesByLang(abbrev: string): SpeechSynthesisVoice[] {
     const voices = getVoices();
-    return voices.filter(v => v.lang === lang)
+    return voices.filter(v => parse(v.lang).abbrev === abbrev)
 };
