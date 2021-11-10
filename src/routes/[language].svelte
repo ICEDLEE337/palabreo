@@ -9,8 +9,10 @@
 @import '@onivoro/browser-layout/button';
 @import '@onivoro/browser-layout/hero';
 @import '@onivoro/browser-layout/padding';
+// @import '@onivoro/browser-layout/text';
 .hero {
     height: 100%;
+    // @extend .txt;
 }
 </style>
 
