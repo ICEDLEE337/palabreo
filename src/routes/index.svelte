@@ -9,7 +9,7 @@
 @import '@onivoro/browser-layout/hero';
 </style>
 
-<div class="hero light blackice">
+<div class="hero">
     <div>
         <h1>Supported Languages</h1>
     </div>
@@ -17,8 +17,8 @@
 
 <div class="pancake-stack">
     {#each supportedLanguages as lang }
-        <a class="pancake stroked" href={lang}>
-           <h2>{lang}</h2>
+        <a class="pancake stroked" href={lang.abbrev}>
+           <h2>{lang.text}</h2>
         </a>
     {/each}
 </div>

@@ -1,6 +1,6 @@
 <nav class="row justify-content-space-around">
-    {#each linx as link}
-        <a href={link.slug}>{link.name}</a>
+    {#each supportedLanguages as link}
+        <a href={link.abbrev}>{link.text}</a>
     {/each}
 </nav>
 <main>
@@ -9,24 +9,24 @@
 
 <script lang="ts">
     import {supportedLanguages} from '$lib/constants/supported-languages';
-    const prefix = '/lang';
-    let links = ['es-MX', 'es-US', 'el-GR', 'he-IL']
-        .map(name => ({name, slug: `${prefix}/${name}/`}));
-        
-    let linx = supportedLanguages
-        .map(name => ({name, slug: `/${name}/`}));
+    const prefix = '/lang';            
 </script>
 
 <style lang="scss">
     @import '@onivoro/browser-layout/flex';
-    @import '@onivoro/browser-layout/button';
+    @import '@onivoro/browser-layout/button';    
 
     a, button {
-        @extend .stroked;
+        @extend .btn;
     }
 
     nav {
         border-bottom: double 2px lightsteelblue;
         padding: 0;
     }
+
+    main {
+        overflow-y: auto;
+        height: calc(100vh - 54px);
+    }    
 </style>
