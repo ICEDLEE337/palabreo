@@ -2,24 +2,35 @@
   "name": "palabreo",
   "version": "0.1.0",
   "scripts": {
+    "format": "prettier --write --plugin-search-dir=. src/**/*.svelte",
+    "local": "npm start | grep -v Unused",
+    "start": "npm run dev",
     "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
+    "build": "svelte-kit build | grep -v Unused",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
-    "@onivoro/browser-layout": "^0.71.0",
-    "@sveltejs/adapter-static": "^1.0.0-next.21",
+    "@onivoro/nodejs-cli-sdk": "^0.36.0",
+    "@onivoro/server-disk": "^0.3.0",
+    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
-    "node-sass": "^6.0.1",
-    "sass": "^1.42.1",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.6.0",
+    "puppeteer": "^9.1.1",
+    "sass": "^1.43.3",
     "svelte": "^3.42.6",
     "svelte-check": "^2.2.6",
-    "svelte-preprocess": "^4.9.8",
+    "svelte-preprocess": "^4.9.4",
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"
   },
   "type": "module",
-  "dependencies": {}
+  "dependencies": {
+    "@onivoro/browser-layout": "^0.72.0",
+    "@onivoro/isomorphic-seo": "^1.1.0",
+    "dayjs": "^1.10.7",
+    "firebase": "^9.6.6"
+  }
 }
