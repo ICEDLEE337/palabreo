@@ -9,9 +9,9 @@ export class VoiceService {
   voices$$: BehaviorSubject<SpeechSynthesisVoice[]> = new BehaviorSubject([]) as any;
   voices$ = this.voices$$.asObservable();
 
-  speak(voice: SpeechSynthesisVoice, text: string, lang: string, pitch?: number, rate?: number) {
+  speak(voice: SpeechSynthesisVoice, text: string, pitch?: number, rate?: number) {
     let speech = new window.SpeechSynthesisUtterance();
-    speech.lang = lang;
+    speech.lang = voice.lang;
     speech.pitch = pitch || 1;
     speech.text = text;
     speech.rate = rate || 0.8;

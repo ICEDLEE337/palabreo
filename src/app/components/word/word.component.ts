@@ -30,7 +30,7 @@ export class WordComponent implements OnInit {
     this.voices$.pipe(
       map(voices => voices.filter(v => v.lang === lang)),
       map(voices => voices[lang === 'en-US' ? 2 : 0] ?? voices[0]),
-      tap(v => this.voiceSvc.speak(v, word ?? 'blah', v.lang))
+      tap(v => this.voiceSvc.speak(v, word ?? 'blah'))
     )
       .subscribe();
   }
