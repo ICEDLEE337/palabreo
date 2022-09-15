@@ -16,6 +16,7 @@ export class VoiceService {
     speech.text = text;
     speech.rate = rate || 0.8;
     speech.voice = voice;
+    speech.volume = 1;
     window.speechSynthesis.speak(speech);
   }
 
