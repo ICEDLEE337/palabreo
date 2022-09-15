@@ -1,0 +1,13 @@
+@import '../../../styles/variables';
+
+:host {
+    mat-card {
+        display: grid;
+        place-items: center;
+    }
+
+    .flag {
+        border-bottom: dashed 3px $primary-color;
+        margin-bottom: 1rem;
+    }
+}

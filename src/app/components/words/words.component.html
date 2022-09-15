@@ -1,0 +1,6 @@
+<mat-card>
+    <mat-card-title>All Words</mat-card-title>
+    <mat-card *ngFor="let word of (words$ | async)">
+        <a mat-raised-button [routerLink]="['/', 'words', word.id]">{{word.english}}</a>
+    </mat-card>
+</mat-card>

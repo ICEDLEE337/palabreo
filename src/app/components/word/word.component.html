@@ -1,0 +1,45 @@
+<mat-card>
+    <a mat-raised-button [routerLink]="['/', 'words']"><mat-icon>arrow_back</mat-icon>All Words</a>
+</mat-card>
+
+<ng-container *ngFor="let word of [word$ | async]">
+    <mat-card>
+        <div class="flag">
+            <app-flag lang="en"></app-flag>
+        </div>
+        <mat-card-title>{{word?.english}}</mat-card-title>
+        <button mat-mini-fab (click)="play(word?.english, 'en-US')">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+    </mat-card>
+
+    <mat-card *ngIf="word?.spanish">
+        <div class="flag">
+            <app-flag lang="es"></app-flag>
+        </div>
+        <mat-card-title>{{word?.spanish}}</mat-card-title>
+        <button mat-mini-fab (click)="play(word?.spanish, 'es-US')">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+    </mat-card>
+
+    <mat-card *ngIf="word?.hebrew">
+        <div class="flag">
+            <app-flag lang="he"></app-flag>
+        </div>
+        <mat-card-title>{{word?.hebrew}}</mat-card-title>
+        <button mat-mini-fab (click)="play(word?.hebrew, 'he-IL')">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+    </mat-card>
+
+    <mat-card *ngIf="word?.greek">
+        <div class="flag">
+            <app-flag lang="el"></app-flag>
+        </div>
+        <mat-card-title>{{word?.greek}}</mat-card-title>
+        <button mat-mini-fab (click)="play(word?.greek, 'el-GR')">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+    </mat-card>
+</ng-container>
