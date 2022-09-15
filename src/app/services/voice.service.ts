@@ -10,14 +10,33 @@ export class VoiceService {
   voices$ = this.voices$$.asObservable();
 
   speak(voice: SpeechSynthesisVoice, text: string, pitch?: number, rate?: number) {
-    let speech = new window.SpeechSynthesisUtterance();
-    speech.lang = voice.lang;
-    speech.pitch = pitch || 1;
-    speech.text = text;
-    speech.rate = rate || 0.8;
-    speech.voice = voice;
-    speech.volume = 1;
-    window.speechSynthesis.speak(speech);
+    const handler = (e: any) => this.snackBar.open(e?.detail || e?.message || Object.keys(e).sort().join(', '))
+
+    const utterance = new window.SpeechSynthesisUtterance();
+    // utterance.onstart = handler
+    // utterance.onend = handler
+    utterance.onerror = handler
+
+    // SSML markup is rarely supported
+    // See: https://www.w3.org/TR/speech-synthesis/
+    // utterance.onmark = handler
+
+    // word boundaries are supported by
+    // Safari MacOS and on windows but
+    // not on Linux and Android browsers
+    // utterance.onboundary = handler
+
+    // not supported / fired
+    // on many browsers somehow
+    // utterance.onpause = handler
+    // utterance.onresume = handler
+    utterance.lang = voice.lang;
+    utterance.pitch = pitch || 1;
+    utterance.text = text;
+    utterance.rate = rate || 0.8;
+    utterance.voice = voice;
+    utterance.volume = 1;
+    window.speechSynthesis.speak(utterance);
   }
 
   constructor(
