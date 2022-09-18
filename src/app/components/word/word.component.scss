@@ -1,6 +1,15 @@
 @import '../../../styles/variables';
 
 :host {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: space-around;
+
+    mat-card {
+        width: auto;
+    }
+
     mat-card {
         display: grid;
         place-items: center;

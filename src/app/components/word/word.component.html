@@ -1,7 +1,3 @@
-<mat-card>
-    <a mat-raised-button [routerLink]="['/', 'words']"><mat-icon>arrow_back</mat-icon>All Words</a>
-</mat-card>
-
 <ng-container *ngFor="let word of [word$ | async]">
     <mat-card>
         <div class="flag">
