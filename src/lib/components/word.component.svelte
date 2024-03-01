@@ -6,6 +6,9 @@
 </article>
 
 <script lang="ts">
+    import type { IWord } from "$lib/interfaces/word.interface";
+
+
     export let word: IWord;
     export let lang;
 </script>

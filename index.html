@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        // Import stylesheets
+
+function speak(voice, text, pitch, rate, lang) {
+  if (window.speechSynthesis && window.SpeechSynthesisUtterance) {
+    let speech = new window.SpeechSynthesisUtterance();
+    speech.lang = lang;
+    speech.pitch = pitch || 1.24;
+    speech.text = text;
+    speech.rate = rate || 0.8;
+    speech.voice = voice;
+    window.speechSynthesis.speak(speech);
+  }
+}
+
+function getVoices() {
+  const voices = window.speechSynthesis.getVoices();
+  return voices;
+}
+
+function speakEnglish(text) {
+  const allVoices = getVoices();
+  const specialVoices = allVoices.filter(function (v) {
+    return v.name === 'Google US English';
+  });
+  specialVoices.forEach(function (v) {
+    speak(v, text);
+  });
+}
+
+function init() {
+  const heVoice = getVoices();
+  console.warn(heVoice);
+  speakEnglish('hi');
+}
+
+init();
+
+    </script>
+    <body>
+
+    </body>
+</html>
