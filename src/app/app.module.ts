@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { LayoutComponent } from './components/layout/layout.component';
-import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -29,7 +28,6 @@ import { FlagComponent } from './components/flag/flag.component';
   declarations: [
     AppComponent,
     LayoutComponent,
-    NavComponent,
     WordComponent,
     WordsComponent,
     FlagComponent,
