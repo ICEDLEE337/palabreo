@@ -4,8 +4,7 @@ import { WordRepository } from 'src/app/repositories/word-repository';
 
 @Component({
   selector: 'app-words',
-  templateUrl: './words.component.html',
-  styleUrls: ['./words.component.scss']
+  templateUrl: './words.component.html'
 })
 export class WordsComponent implements OnInit {
   words$ = this.wordRepo.list$();

@@ -8,8 +8,7 @@ import { IWord } from 'src/app/types/word.interface';
 
 @Component({
   selector: 'app-word',
-  templateUrl: './word.component.html',
-  styleUrls: ['./word.component.scss']
+  templateUrl: './word.component.html'
 })
 export class WordComponent implements OnInit {
   word$!: Observable<IWord>;

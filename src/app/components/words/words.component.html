@@ -1,5 +1,5 @@
-<mat-card class="word-wrapper">
+<div class="flex flex-col gap-8 items-stretch">
     <mat-card *ngFor="let word of (words$ | async)">
         <a mat-raised-button [routerLink]="['/', 'words', word.id]">{{word.english}}</a>
     </mat-card>
-</mat-card>
+</div>
